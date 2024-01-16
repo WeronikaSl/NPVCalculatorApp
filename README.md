@@ -1,0 +1,2 @@
+NPV calculator written in C++ to practice refactoring.
+The Net Present Value (NPV) is used for financial analysis to determine whether or not an investment, project, or business will be profitable. The NPV of an investment is the sum of all future cash flows over the investment’s lifetime, discounted to the present value, since the cash flows in the future will be of lesser value than the cash flows of today.
