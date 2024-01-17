@@ -21,8 +21,12 @@ CashFlows UserInteractionHandlerImpl::getCashFlows(YearsOfInvestment yearsOfInve
 {
 	CashFlows result{};
 	int64_t cashflow{ 0 };
-	std::cout << "Podaj cash flows z poszczegolnych lat (zaczynajac od roku 0, gdy pieniadze zainwestowano): ";
-	for (uint16_t i{ 0 }; i <= yearsOfInvestment; i++)
+	std::cout << "Podaj ilosc zainwestowanych pieniedzy(wyrazone w liczbie calkowitej, dodatniej): ";
+	std::cin >> cashflow;
+	result.push_back(cashflow * (-1)); //to get negative number for NPV formula
+
+	std::cout << "Podaj cash flows z poszczegolnych lat (wyrazone w liczbach calkowitych, dodatnich lub ujemnych): " << std::endl;
+	for (uint16_t i{ 1 }; i <= yearsOfInvestment; i++)
 	{
 		std::cout << "Podaj cash flow w roku " << i << ": ";
 		std::cin >> cashflow;

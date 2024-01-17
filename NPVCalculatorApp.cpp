@@ -2,7 +2,6 @@
 //
 #include "NPVCalculatorApp.hpp"
 
-
 int main()
 {
 	AppManagerImpl appManager;

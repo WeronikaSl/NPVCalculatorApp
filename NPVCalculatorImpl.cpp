@@ -1,5 +1,6 @@
 #include "NPVCalculatorImpl.hpp"
 #include <cmath>
+#include <iostream>
 
 NPVCalculatorImpl::NPVCalculatorImpl(DiscountRate discountRate, YearsOfInvestment yearsOfInvestment, CashFlows cashFlows)
 	: discountRate(discountRate), yearsOfInvestment(yearsOfInvestment), cashFlows(cashFlows)
@@ -35,4 +36,21 @@ void NPVCalculatorImpl::setCashFlows(CashFlows newCashFlows)
 YearsOfInvestment NPVCalculatorImpl::getYearsOfInvestment() const
 {
 	return yearsOfInvestment;
+}
+
+void NPVCalculatorImpl::isInvestmentProfitable()
+{
+	double npv{ countNPV() };
+	int64_t initialCost{ (cashFlows[0] * (-1)) };
+	std::cout 
+		<< "NPV: " << npv << std::endl //data is stored internally in binary format so it's not possible to accurately represent decimal digits - hence lack of precision
+		<< "Koszt poczatkowy: " << initialCost << std::endl; //to get positive value
+	if (npv > initialCost)
+	{
+		std::cout << "Inwestycja jest oplacalna" << std::endl;
+	}
+	else
+	{
+		std::cout << "Inwestycja nie jest oplacalna" << std::endl;
+	}
 }

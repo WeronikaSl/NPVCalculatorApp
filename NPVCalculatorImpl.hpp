@@ -16,4 +16,5 @@ public:
 	void setYearsOfInvestment(YearsOfInvestment);
 	void setCashFlows(CashFlows);
 	YearsOfInvestment getYearsOfInvestment() const;
+	void isInvestmentProfitable();
 };

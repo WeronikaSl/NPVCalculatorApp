@@ -12,7 +12,7 @@ endif()
 project ("NPVCalculatorApp")
 
 # Add source to this project's executable.
-add_executable (NPVCalculatorApp "NPVCalculatorApp.cpp" "NPVCalculatorApp.hpp" "NPVCalculatorImpl.cpp" "AppManagerImpl.cpp" "UserInteractionHandlerImpl.cpp")
+add_executable (NPVCalculatorApp "NPVCalculatorApp.cpp" "NPVCalculatorApp.hpp" "NPVCalculatorImpl.cpp" "AppManagerImpl.cpp" "UserInteractionHandlerImpl.cpp" "ErrorHandlerImpl.cpp")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET NPVCalculatorApp PROPERTY CXX_STANDARD 20)
