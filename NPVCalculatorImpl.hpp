@@ -5,12 +5,15 @@
 class NPVCalculatorImpl
 {
 private:
-	DiscountRate discountRate{ 0.0f }; //stopa dyskontowa
-	YearsOfInvestment yearsOfInvestment{ 0 }; //is it needed? 
+	DiscountRate discountRate{ 0.0f };
+	YearsOfInvestment yearsOfInvestment{ 0 };
 	CashFlows cashFlows{};
 public:
 	NPVCalculatorImpl(DiscountRate, YearsOfInvestment, CashFlows);
 	NPVCalculatorImpl() = default;
 	double countNPV();
-
+	void setDiscountRate(DiscountRate);
+	void setYearsOfInvestment(YearsOfInvestment);
+	void setCashFlows(CashFlows);
+	YearsOfInvestment getYearsOfInvestment() const;
 };

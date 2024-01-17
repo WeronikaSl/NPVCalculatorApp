@@ -3,7 +3,6 @@
 
 #pragma once
 
-#include <iostream>
-#include "NPVCalculatorImpl.hpp"
+#include "AppManagerImpl.hpp"
 
 // TODO: Reference additional headers your program requires here.
