@@ -14,11 +14,12 @@ private:
 	std::shared_ptr<StatementDisplayer> statementDisplayer{ nullptr };
 public:
 	NPVCalculatorImpl(DiscountRate, YearsOfInvestment, CashFlows);
-	NPVCalculatorImpl();
+	NPVCalculatorImpl() = default;
 	double countNPV();
 	void setDiscountRate(DiscountRate);
 	void setYearsOfInvestment(YearsOfInvestment);
 	void setCashFlows(CashFlows);
 	YearsOfInvestment getYearsOfInvestment() const;
 	void isInvestmentProfitable();
+	void setStatementDisplayer(std::shared_ptr<StatementDisplayer>);
 };

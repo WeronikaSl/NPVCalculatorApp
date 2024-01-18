@@ -1,10 +1,6 @@
 #include "UserInteractionHandlerImpl.hpp"
 #include <iostream>
 
-UserInteractionHandlerImpl::UserInteractionHandlerImpl()
-{
-	statementDisplayer = std::make_shared<EnglishStatementDisplayerImpl>(); ///CHANGE 
-}
 
 DiscountRate UserInteractionHandlerImpl::getDiscountRate() const
 {
@@ -38,4 +34,9 @@ CashFlows UserInteractionHandlerImpl::getCashFlows(YearsOfInvestment yearsOfInve
 		result.push_back(cashflow);
 	}
 	return result;
+}
+
+void UserInteractionHandlerImpl::setStatementDisplayer(std::shared_ptr<StatementDisplayer> newStatementDisplayer)
+{
+	statementDisplayer = newStatementDisplayer;
 }

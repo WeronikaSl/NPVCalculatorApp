@@ -6,11 +6,6 @@ NPVCalculatorImpl::NPVCalculatorImpl(DiscountRate discountRate, YearsOfInvestmen
 	: discountRate(discountRate), yearsOfInvestment(yearsOfInvestment), cashFlows(cashFlows)
 {}
 
-NPVCalculatorImpl::NPVCalculatorImpl()
-{
-	statementDisplayer = std::make_shared<EnglishStatementDisplayerImpl>();
-}
-
 double NPVCalculatorImpl::countNPV()
 {
 	uint16_t yearOfInvestment{ 0 };
@@ -56,4 +51,9 @@ void NPVCalculatorImpl::isInvestmentProfitable()
 	{
 		statementDisplayer->isNotProfitable();
 	}
+}
+
+void NPVCalculatorImpl::setStatementDisplayer(std::shared_ptr<StatementDisplayer> newStatementDisplayer)
+{
+	statementDisplayer = newStatementDisplayer;
 }

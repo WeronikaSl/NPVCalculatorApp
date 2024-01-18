@@ -12,8 +12,8 @@ private:
 	ErrorHandlerImpl errorHandler;
 	std::shared_ptr<StatementDisplayer> statementDisplayer{ nullptr };
 public:
-	UserInteractionHandlerImpl();
 	DiscountRate getDiscountRate() const;
 	YearsOfInvestment getYearsOfInvestment() const;
 	CashFlows getCashFlows(YearsOfInvestment) const;
+	void setStatementDisplayer(std::shared_ptr<StatementDisplayer>);
 };
