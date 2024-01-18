@@ -1,10 +1,16 @@
 #include "AppManagerImpl.hpp"
 #include <iostream>
 
+AppManagerImpl AppManagerImpl::instance;
+
+AppManagerImpl& AppManagerImpl::getInstance()
+{
+	return instance;
+}
 
 void AppManagerImpl::useNPVCalculator()
 {
-	statementDisplayer = StatementDisplayerFactoryImpl::getStatementDisplayer(userInteractionHandler.getLanguage()); //create enum class for this
+	statementDisplayer = StatementDisplayerFactoryImpl::getStatementDisplayer(userInteractionHandler.getLanguage());
 	userInteractionHandler.setStatementDisplayer(statementDisplayer);
 	npvCalculator.setStatementDisplayer(statementDisplayer);
 	npvCalculator.setDiscountRate(userInteractionHandler.getDiscountRate());

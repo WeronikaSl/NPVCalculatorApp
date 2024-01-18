@@ -1,13 +1,13 @@
 #include "StatementDisplayerFactoryImpl.hpp"
 
-std::shared_ptr<StatementDisplayer> StatementDisplayerFactoryImpl::getStatementDisplayer(uint16_t language) //pick a better name for this variable
+std::shared_ptr<StatementDisplayer> StatementDisplayerFactoryImpl::getStatementDisplayer(Language language) //pick a better name for this variable
 {
 	std::shared_ptr<StatementDisplayer> result{ nullptr };
-	if (language == 1)
+	if (language == Language::POLISH)
 	{
 		result = std::make_shared<PolishStatementDisplayerImpl>();
 	}
-	else if (language == 2)
+	else if (language == Language::ENGLISH)
 	{
 		result = std::make_shared<EnglishStatementDisplayerImpl>();
 

@@ -4,6 +4,5 @@
 
 int main()
 {
-	AppManagerImpl appManager;
-	appManager.useNPVCalculator();
+	AppManagerImpl::getInstance().useNPVCalculator();
 }
