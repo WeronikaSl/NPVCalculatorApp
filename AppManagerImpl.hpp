@@ -4,6 +4,7 @@
 #include "UserInteractionHandlerImpl.hpp"
 #include "PolishStatementDisplayerImpl.hpp"
 #include "EnglishStatementDisplayerImpl.hpp"
+#include "StatementDisplayerFactoryImpl.hpp"
 #include <memory>
 
 class AppManagerImpl : public AppManager

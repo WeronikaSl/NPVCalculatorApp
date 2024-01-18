@@ -16,4 +16,5 @@ public:
 	YearsOfInvestment getYearsOfInvestment() const;
 	CashFlows getCashFlows(YearsOfInvestment) const;
 	void setStatementDisplayer(std::shared_ptr<StatementDisplayer>);
+	uint16_t getLanguage() const;
 };

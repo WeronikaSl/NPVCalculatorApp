@@ -40,3 +40,11 @@ void UserInteractionHandlerImpl::setStatementDisplayer(std::shared_ptr<Statement
 {
 	statementDisplayer = newStatementDisplayer;
 }
+
+uint16_t UserInteractionHandlerImpl::getLanguage() const
+{
+	uint16_t result{ 0 };
+	std::cout << "Wybierz jezyk/select language - polski nacisnij 1/for English press 2: ";
+	std::cin >> result;
+	return result;
+}
