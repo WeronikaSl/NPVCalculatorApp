@@ -6,6 +6,11 @@ NPVCalculatorImpl::NPVCalculatorImpl(DiscountRate discountRate, YearsOfInvestmen
 	: discountRate(discountRate), yearsOfInvestment(yearsOfInvestment), cashFlows(cashFlows)
 {}
 
+NPVCalculatorImpl::NPVCalculatorImpl()
+{
+	statementDisplayer = std::make_shared<EnglishStatementDisplayerImpl>();
+}
+
 double NPVCalculatorImpl::countNPV()
 {
 	uint16_t yearOfInvestment{ 0 };
@@ -40,17 +45,15 @@ YearsOfInvestment NPVCalculatorImpl::getYearsOfInvestment() const
 
 void NPVCalculatorImpl::isInvestmentProfitable()
 {
-	double npv{ countNPV() };
-	int64_t initialCost{ (cashFlows[0] * (-1)) };
-	std::cout 
-		<< "NPV: " << npv << std::endl //data is stored internally in binary format so it's not possible to accurately represent decimal digits - hence lack of precision
-		<< "Koszt poczatkowy: " << initialCost << std::endl; //to get positive value
+	double npv{ countNPV() }; //data is stored internally in binary format so it's not possible to accurately represent decimal digits - hence lack of precision
+	int64_t initialCost{ (cashFlows[0] * (-1)) }; //to get positive value
+	statementDisplayer->compareNPVAndInitialCost(npv, initialCost);
 	if (npv > initialCost)
 	{
-		std::cout << "Inwestycja jest oplacalna" << std::endl;
+		statementDisplayer->isProfitable();
 	}
 	else
 	{
-		std::cout << "Inwestycja nie jest oplacalna" << std::endl;
+		statementDisplayer->isNotProfitable();
 	}
 }

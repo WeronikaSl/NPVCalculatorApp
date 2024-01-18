@@ -10,4 +10,7 @@ public:
 	virtual void investedAmountOfMoney() const = 0;
 	virtual void allCashFlows() const = 0;
 	virtual void singleCashFlow(uint16_t) const = 0;
+	virtual void compareNPVAndInitialCost(double, int64_t) const = 0;
+	virtual void isProfitable() const = 0;
+	virtual void isNotProfitable() const = 0;
 };

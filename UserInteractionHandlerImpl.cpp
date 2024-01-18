@@ -3,7 +3,7 @@
 
 UserInteractionHandlerImpl::UserInteractionHandlerImpl()
 {
-	statementDisplayer = std::make_shared<PolishStatementDisplayerImpl>(); ///CHANGE 
+	statementDisplayer = std::make_shared<EnglishStatementDisplayerImpl>(); ///CHANGE 
 }
 
 DiscountRate UserInteractionHandlerImpl::getDiscountRate() const

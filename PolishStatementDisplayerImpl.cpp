@@ -25,3 +25,18 @@ void PolishStatementDisplayerImpl::singleCashFlow(uint16_t year) const
 {
 	std::cout << "Podaj cash flow w roku " << year << ": ";
 }
+
+void PolishStatementDisplayerImpl::compareNPVAndInitialCost(double npv, int64_t initialCost) const
+{
+	std::cout << "NPV: " << npv << std::endl << "Koszt poczatkowy: " << initialCost << std::endl;
+}
+
+void PolishStatementDisplayerImpl::isProfitable() const
+{
+	std::cout << "Inwestycja jest oplacalna" << std::endl;
+}
+
+void PolishStatementDisplayerImpl::isNotProfitable() const
+{
+	std::cout << "Inwestycja nie jest oplacalna" << std::endl;
+}

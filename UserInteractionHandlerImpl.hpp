@@ -3,6 +3,7 @@
 #include "ErrorHandlerImpl.hpp"
 #include "Types.hpp"
 #include "PolishStatementDisplayerImpl.hpp"
+#include "EnglishStatementDisplayerImpl.hpp"
 #include <memory>
 
 class UserInteractionHandlerImpl : public UserInteractionHandler
