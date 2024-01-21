@@ -21,5 +21,5 @@ public:
 	void setCashFlows(CashFlows);
 	YearsOfInvestment getYearsOfInvestment() const;
 	void isInvestmentProfitable();
-	void setStatementDisplayer(std::shared_ptr<StatementDisplayer>);
+	void setStatementDisplayer(std::shared_ptr<StatementDisplayer>); //todo shouldnt this be passed-by-reference?
 };

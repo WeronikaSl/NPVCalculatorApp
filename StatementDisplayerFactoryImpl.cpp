@@ -3,14 +3,17 @@
 std::shared_ptr<StatementDisplayer> StatementDisplayerFactoryImpl::getStatementDisplayer(Language language) //pick a better name for this variable
 {
 	std::shared_ptr<StatementDisplayer> result{ nullptr };
-	if (language == Language::POLISH)
+	switch (language)
 	{
+	case Language::POLISH:
 		result = std::make_shared<PolishStatementDisplayerImpl>();
-	}
-	else if (language == Language::ENGLISH)
-	{
+		break;
+	case Language::ENGLISH:
 		result = std::make_shared<EnglishStatementDisplayerImpl>();
-
+		break;
+	default: 
+		//throw an error //will probably never happen but just in case to prevent returning a nullptr and undefined behaviour
+		break;
 	}
-	return result; //make sure you dont return nullptr!!!
+	return result;
 }
