@@ -40,3 +40,18 @@ void PolishStatementDisplayerImpl::isNotProfitable() const
 {
 	std::cout << "Inwestycja nie jest oplacalna" << std::endl;
 }
+
+void PolishStatementDisplayerImpl::incorrectDiscountRateInput() const
+{
+	std::cout << "BLAD! Podaj liczbe z zakresu 0.00-1.00: ";
+}
+
+void PolishStatementDisplayerImpl::enterIntGreaterThanZero() const
+{
+	std::cout << "BLAD! Podaj liczbe wieksza od 0: ";
+}
+
+void PolishStatementDisplayerImpl::enterWholeNumber() const
+{
+	std::cout << "BLAD! Podaj liczbe calkowita: ";
+}

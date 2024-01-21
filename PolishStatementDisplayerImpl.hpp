@@ -12,4 +12,7 @@ public:
 	void compareNPVAndInitialCost(double, int64_t) const;
 	void isProfitable() const;
 	void isNotProfitable() const;
+	void incorrectDiscountRateInput() const;
+	void enterIntGreaterThanZero() const;
+	void enterWholeNumber() const;
 };

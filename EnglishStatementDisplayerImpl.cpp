@@ -40,3 +40,18 @@ void EnglishStatementDisplayerImpl::isNotProfitable() const
 	std::cout << "The investment is not profitable" << std::endl;
 }
 
+void EnglishStatementDisplayerImpl::incorrectDiscountRateInput() const
+{
+	std::cout << "ERROR! Enter a number in the range 0.00-1.00: ";
+}
+
+void EnglishStatementDisplayerImpl::enterIntGreaterThanZero() const
+{
+	std::cout << "ERROR! Enter a number greater than 0: ";
+}
+
+void EnglishStatementDisplayerImpl::enterWholeNumber() const
+{
+	std::cout << "ERROR! Enter a whole number: ";
+}
+
