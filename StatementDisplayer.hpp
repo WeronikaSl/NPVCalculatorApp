@@ -7,6 +7,7 @@ public:
 	virtual ~StatementDisplayer() = default;
 	static void selectLanguage();
 	static void incorrectLanguageChoice();
+	static std::string incorrectLanguageException();
 	virtual void discountRate() const = 0;
 	virtual void yearsOfInvestment() const = 0;
 	virtual void investedAmountOfMoney() const = 0;

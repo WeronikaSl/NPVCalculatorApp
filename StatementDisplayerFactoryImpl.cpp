@@ -1,6 +1,7 @@
 #include "StatementDisplayerFactoryImpl.hpp"
+#include <exception>
 
-std::shared_ptr<StatementDisplayer> StatementDisplayerFactoryImpl::getStatementDisplayer(Language language) //pick a better name for this variable
+std::shared_ptr<StatementDisplayer> StatementDisplayerFactoryImpl::getStatementDisplayer(Language language)
 {
 	std::shared_ptr<StatementDisplayer> result{ nullptr };
 	switch (language)
@@ -12,7 +13,7 @@ std::shared_ptr<StatementDisplayer> StatementDisplayerFactoryImpl::getStatementD
 		result = std::make_shared<EnglishStatementDisplayerImpl>();
 		break;
 	default: 
-		//throw an error //will probably never happen but just in case to prevent returning a nullptr and undefined behaviour
+		throw std::invalid_argument(StatementDisplayer::incorrectLanguageException()); //will probably never happen but just in case to prevent returning a nullptr and undefined behaviour
 		break;
 	}
 	return result;
