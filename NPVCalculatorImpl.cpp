@@ -43,14 +43,7 @@ void NPVCalculatorImpl::isInvestmentProfitable()
 	double npv{ countNPV() }; //data is stored internally in binary format so it's not possible to accurately represent decimal digits - hence lack of precision
 	int64_t initialCost{ (cashFlows[0] * (-1)) }; //to get positive value
 	statementDisplayer->compareNPVAndInitialCost(npv, initialCost);
-	if (npv > initialCost)
-	{
-		statementDisplayer->isProfitable();
-	}
-	else
-	{
-		statementDisplayer->isNotProfitable();
-	}
+	(npv > initialCost) ? statementDisplayer->isProfitable() : statementDisplayer->isNotProfitable();
 }
 
 void NPVCalculatorImpl::setStatementDisplayer(std::shared_ptr<StatementDisplayer> newStatementDisplayer)

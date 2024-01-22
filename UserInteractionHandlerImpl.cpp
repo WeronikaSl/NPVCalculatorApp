@@ -1,6 +1,13 @@
 #include "UserInteractionHandlerImpl.hpp"
 #include <iostream>
 
+void UserInteractionHandlerImpl::discardImput() const
+{
+	std::cin.clear();
+	constexpr int64_t amountOfCharsToSkip{ std::numeric_limits<std::streamsize>::max() };
+	constexpr uint8_t newLine{ '\n' };
+	std::cin.ignore(amountOfCharsToSkip, newLine);
+}
 
 DiscountRate UserInteractionHandlerImpl::getDiscountRate() const
 {
@@ -79,7 +86,7 @@ CashFlows UserInteractionHandlerImpl::getCashFlows(YearsOfInvestment yearsOfInve
 	return result;
 }
 
-void UserInteractionHandlerImpl::setStatementDisplayer(std::shared_ptr<StatementDisplayer> newStatementDisplayer) //todo shouldnt this be passed-by-reference?
+void UserInteractionHandlerImpl::setStatementDisplayer(std::shared_ptr<StatementDisplayer> newStatementDisplayer)
 {
 	statementDisplayer = newStatementDisplayer;
 }
@@ -104,10 +111,3 @@ Language UserInteractionHandlerImpl::getLanguage() const
 	return static_cast<Language>(static_cast<uint16_t>(result));
 }
 
-void UserInteractionHandlerImpl::discardImput() const
-{
-	std::cin.clear();
-	constexpr int64_t amountOfCharsToSkip{ std::numeric_limits<std::streamsize>::max() };
-	constexpr uint8_t newLine{ '\n' };
-	std::cin.ignore(amountOfCharsToSkip, newLine);
-}
