@@ -17,4 +17,5 @@ public:
 	CashFlows getCashFlows(YearsOfInvestment) const;
 	void setStatementDisplayer(std::shared_ptr<StatementDisplayer>);
 	Language getLanguage() const;
+	void discardImput() const;
 };
